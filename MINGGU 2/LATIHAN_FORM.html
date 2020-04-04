@@ -1,0 +1,64 @@
+<html>
+<head>
+	<title>Latihan FORM</title>
+</head>
+<body>
+	<h2> FORM BIODATA HM-SISFO </h2>
+	<form name="fbiomhs" action="form.php" method="post">
+		<table>
+			<tr>
+				<td> NIM </td>
+				<td><input type="text" name="fnim"></td>
+			</tr>
+			<tr>
+				<td> Nama </td>
+				<td><input type="text" name="fname"></td>
+			</tr>
+			<tr>
+				<td> Tanggal Lahir </td>
+				<td><input type="date"></td>
+			</tr>
+			<tr>
+				<td> Jenis Kelamin </td>
+				<td><input type="radio" name="fjeniskelamin" value="L">L
+				<input type="radio" name="fjeniskelamin" value="P">P</td>
+			</tr>
+			<tr>
+				<td> IPK </td>
+				<td><input type="number" name="fipk"></td>
+			</tr>
+			<tr>
+				<td> Agama </td>
+				<td>
+					<select >
+						<option value="Islam"> Islam </option>
+						<option value="Kristen"> Kristen </option>
+						<option value="Katholik"> Katholik </option>
+						<option value="Hindu"> Hindu </option>
+						<option value="Budha"> Budha </option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td> Bidang Peminatan </td>
+				<td>
+					<select multiple name="fbidangpeminatan">
+						<option value="Front End Develpment"> Front End Develpment </option>
+						<option value="Back End Develpment"> Back End Develpment </option>
+						<option value="Devops"> Devops </option>
+						<option value="Android Dev"> Android Dev </option>
+						<option value="iOS Dev"> iOS Dev </option>	
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="submit" name="fsubmit" value="Kirim"></td>
+			</tr>
+		</table>
+	</form>
+	
+	
+	
+</body>
+</html>
