@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <form action="proses_M62[rev].php" method="post">
+    <form action="proses_M62.php" method="post">
 	<table>
 		<tr>
 			<td>

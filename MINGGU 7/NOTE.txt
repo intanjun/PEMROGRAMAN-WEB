@@ -1,0 +1,6 @@
+Sedikit catatan untuk minggu ke-7 nya pak :
+sewakendaraan.sql (ada databasenya tapi gaada relasinya)
+sewamobil.sql (ada database dan relasi, +ada tambahan data 
+untuk tabel transaksi dan kendaraan,karena relasinya kurang tepat)
+
+Maaf apabila kurang sesuai pak 
