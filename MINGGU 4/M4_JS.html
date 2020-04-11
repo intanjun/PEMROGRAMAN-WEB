@@ -1,0 +1,114 @@
+<!-- Versi Bootstrap -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan Javascrib</title>
+</head>
+
+<body>
+    <div class="container">
+		<table width=65%>
+        <label for="nim"> Nim &nbsp;&nbsp;&emsp;&emsp;&emsp;&emsp; : </label>
+        <select id="nim_mhs" onclick="pilihNim()">
+            <option value="">Pilih Nim</option>
+            <option value="Muh Amin">A11.2015.12345</option>
+            <option value="Santoso">A11.2015.12346</option>
+            <option value="Sutrisno">A11.2015.12347</option>
+        </select>
+
+        <br><br>
+        <label>Nama &emsp;&emsp;&emsp;&emsp;: </label>
+        <Input type="text" id="nama_mhs" placeholder="otomatis" disabled>
+
+        <br><br>
+        <label>Nilai Tugas &ensp;&ensp;&ensp; : </label>
+        <Input type="text" id="nilai_tugas" min='1' max='100' placeholder="Isi angka maks 100" required>
+
+        <br><br>
+        <label>Nilai UTS &nbsp;&ensp;&ensp;&emsp;: </label>
+        <Input type="text" id="nilai_uts" min='1' max='100' placeholder="Isi angka maks 100" required>
+
+        <br><br>
+        <label>Nilai UAS &nbsp;&ensp;&ensp;&emsp;: </label>
+        <Input type="text" id="nilai_uas" min='1' max='100' placeholder="Isi angka maks 100" required>
+
+        <br><br>
+        <label>Nilai Akhir &ensp;&ensp;&emsp;: </label>
+        <Input type="text" id="nilai_akhir" placeholder="otomatis" disabled>
+
+        <br><br>
+        <button onclick="hitungNilaiAkhir()">SIMPAN</button>
+
+        <p id="table"></p>
+		</table>
+    </div>
+
+    <script>
+        let data = {}; //global
+
+        const pilihNim = () => {
+            //memberikan nilai dari dom
+            const valueNimMhs = document.getElementById('nim_mhs').selectedIndex;
+            const namaMhs = document.getElementsByTagName("option")[valueNimMhs].value;
+            const valueNamaMhs = document.getElementById('nama_mhs');
+
+            //set value namaMhs ke input
+            valueNamaMhs.value = namaMhs;
+
+            //push ke object data
+            data.nama = valueNamaMhs.value;
+
+            if (valueNamaMhs.value === "Muh Amin") {
+                return data.nim = "A11.2015.12345"
+            } else if (valueNamaMhs.value === "Santoso") {
+                return data.nim = "A11.2015.12346"
+            } else {
+                return data.nim = "A11.2015.1234"
+            }
+        }
+
+        const hitungNilaiAkhir = () => {
+            //ambil nilai dari dom
+            const nilaiTugas = document.getElementById('nilai_tugas');
+            const nilaiUts = document.getElementById('nilai_uts');
+            const nilaiUas = document.getElementById('nilai_uas');
+            const nilaiAkhir = document.getElementById('nilai_akhir');
+
+            //set value
+            let valueNilaiTugas = nilaiTugas.value;
+            let valueNilaiUts = nilaiUts.value;
+            let valueNilaiUas = nilaiUas.value;
+
+            //menghitung NA
+            let hasil = (0.4 * valueNilaiTugas) + (0.3 * valueNilaiUts) + (0.3 * valueNilaiUas);
+            //menampilkan NA pada label
+            nilaiAkhir.value = hasil;
+
+            //push ke object data
+            data.hasil = hasil;
+
+            //Tampil data
+            const table = document.getElementById('table');
+            table.innerHTML =
+                `<table width=40%>
+                    <tr bgcolor="black" align="center">
+                        <th><font color="white">NIM</th>
+                        <th><font color="white">Nama</th>
+                        <th><font color="white">Nilai Akhir</th>
+                        <th><font color="white">Status</th>
+                    </tr>
+                    <tr bgcolor="WhiteSmoke" align="center">
+                        <td>${data.nim}</td> 
+                        <td>${data.nama}</td>   
+                        <td>${data.hasil}</td>
+                        <td>${hasil > 60 ? 'LULUS' : 'TIDAK'}</td>
+                    </tr>
+                </table>`
+        }
+    </script>
+</body>
+
+</html>
