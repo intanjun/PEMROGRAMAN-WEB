@@ -7,4 +7,3 @@ $pass = "";
 $koneksi = new PDO($engi.':dbname='.$dbse.";host=".$host,
 $user,$pass); 
 ?> 
-Penjelasan: 
