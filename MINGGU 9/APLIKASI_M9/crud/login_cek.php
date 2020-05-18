@@ -24,7 +24,7 @@ if($cek > 0){
 	if($data['Hak']=="operator"){
  
 		// buat session login dan username
-		$_SESSION['username'] = $sabsab;
+		$_SESSION['username'] = $tantann;
 		$_SESSION['Hak']      = "operator";
 		// alihkan ke halaman dashboard operator
 		header("location:halaman_operator.php");
