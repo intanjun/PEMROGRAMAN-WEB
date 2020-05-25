@@ -6,10 +6,11 @@ $data = $lib->show();
 <a class="btn pull-right" href="index.php?p=sekolah&m=add">Tambah Baru</a>
 <h2>Data Sekolah</h2>
 <div style="clear:both;width:200px;margin-right:12px;" class="pull-right">
- <form action="index.php?p=sekolah&m=search">
+
+<form action="index.php?p=sekolah&m=search">
   <input autocomplete="off" type="hidden" name="p" value="sekolah">
   <input autocomplete="off" type="text" name="q" placeHolder="Type and enter to search" value="<?php echo(get("q"));?>">
- </form>
+</form>
 </div>
 
 <div><?php echo get('q')!=""?"hasil pencarian untuk'".(get('q'))."'":"";?></div>

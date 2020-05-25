@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 24, 2020 at 10:49 AM
+-- Generation Time: May 09, 2020 at 05:37 PM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 5.5.37
 
@@ -47,23 +47,15 @@ INSERT INTO `sekolah` (`id`, `nama`, `alamat`, `logo`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tabel_user`
+-- Table structure for table `tb_user`
 --
 
-CREATE TABLE `tabel_user` (
+CREATE TABLE `tb_user` (
   `username` char(20) NOT NULL,
-  `password` varchar(50) NOT NULL,
-  `Nama` varchar(100) NOT NULL,
-  `Hak` enum('admin','operator') NOT NULL
+  `Password` varchar(50) DEFAULT NULL,
+  `Nama` varchar(100) DEFAULT NULL,
+  `Hak` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `tabel_user`
---
-
-INSERT INTO `tabel_user` (`username`, `password`, `Nama`, `Hak`) VALUES
-('dyoemir', 'emir123', 'Hanandyo Emir', 'admin'),
-('tantann', 'intan6', 'Intan Juniar', 'operator');
 
 --
 -- Indexes for dumped tables
@@ -76,9 +68,9 @@ ALTER TABLE `sekolah`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tabel_user`
+-- Indexes for table `tb_user`
 --
-ALTER TABLE `tabel_user`
+ALTER TABLE `tb_user`
   ADD PRIMARY KEY (`username`);
 
 --

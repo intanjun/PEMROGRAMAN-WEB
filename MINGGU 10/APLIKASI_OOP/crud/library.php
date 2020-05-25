@@ -27,7 +27,12 @@ class Library
         $query = $this->koneksi->prepare("SELECT * FROM sekolah");
         $query->execute();
         $data = $query->fetchAll();
-        return $data;
+		$addonq = '';
+		if(get("q")!=""){ $addonq = " WHERE nama LIKE'%".get('q')."%'"; }
+		$hasil = $this -> koneksi->prepare("SELECT * FROM sekolah".$addonq." ORDER BY id DESC");
+		$hasil->execute();
+		$data = $hasil->fetchAll();
+		return $data;
     }
 
     public function get_by_id($id)
@@ -53,7 +58,7 @@ class Library
         $query->execute();
         return $query->rowCount();
     }
-
+	
     public function pdf()
     {
         $hasil = $this->koneksi->prepare("SELECT * FROM sekolah WHERE id = '" . get('id') . "'");
